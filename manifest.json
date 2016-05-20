@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Beautiful Sea",
-	"version": "0.1",
+	"version": "0.2",
 	"description": "GitHub initial commit comment creator.",
 	"browser_action": {
 		"default_icon": "static/icon.png",

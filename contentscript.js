@@ -1,6 +1,6 @@
 put_commit_message = function() {
     if ($("#pull_request_body").is(":visible")) {
-        var str = "Commits:\n";
+        var str = "**Commits:**\n";
         var commits = $('.commit');
         for (var i = 0; i < commits.length; i++) {
             var commit_id = commits.eq(i).find('.commit-id').html();
@@ -9,8 +9,8 @@ put_commit_message = function() {
             str += commit_id + " : " + commit_message.replace(/(\r\n|\n|\r|\t)/gm," ").replace(/\s+/g," ") + "\n";
         }
 
-        str += "\nDescription:\n\n\n";
-        str += "Reviewers:\n";
+        str += "\n**Description:**\n\n\n";
+        str += "**Reviewers:**\n";
 
         $("#pull_request_body").val(str);
         return ['done'];
@@ -30,7 +30,7 @@ put_commit_message = function() {
 
 put_commit_comment = function(target_commit) {
     if ($("#new_comment_field").is(":visible")) {
-        var str = "Commits:\n";
+        var str = "**Commits:**\n";
         var commits = $('.commit');
         var found_target = false;
         for (var i = 0; i < commits.length; i++) {
@@ -43,8 +43,8 @@ put_commit_comment = function(target_commit) {
             }
         }
 
-        str += "\nDescription:\n\n\n";
-        str += "Reviewers:\n";
+        str += "\n**Description:**\n\n\n";
+        str += "**Reviewers:**\n";
 
         $("#new_comment_field").val(str);
         return ["done"]
